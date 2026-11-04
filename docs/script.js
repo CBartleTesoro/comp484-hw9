@@ -152,21 +152,28 @@ function buttonClick() {
         gradeOutput.textContent = "Please enter a valid grade between 0 and 100.";
         return;
     }
+    else { //Part 4 if/else statement 1.
+        grades.push(grade); //add the grade to the array.
 
-    grades.push(grade); //add the grade to the array.
+        const listItem = document.createElement("li");
+        listItem.textContent = grade; 
+        gradeList.appendChild(listItem);//add the grade to the list.
 
-    const listItem = document.createElement("li");
-    listItem.textContent = grade; 
-    gradeList.appendChild(listItem);//add the grade to the list.
+        //now to update the total and average.
+        const total = grades.reduce((sum, grade) => sum + grade, 0);
+        //reduce adds each number in the array and sums it up. We saw it in Comp 333 with prof Kyle Dewey. With sum + grade, 0, it means it will take first value, starting 0 as given in the right, add it, go to next value, add it, and so on until it reaches the end of the array. Its called reduce because it reduced an array to a single value.
 
-    //now to update the total and average.
-    const total = grades.reduce((sum, grade) => sum + grade, 0);
-    //reduce adds each number in the array and sums it up. We saw it in Comp 333 with prof Kyle Dewey. With sum + grade, 0, it means it will take first value, starting 0 as given in the right, add it, go to next value, add it, and so on until it reaches the end of the array. Its called reduce because it reduced an array to a single value.
+        const average = total / grades.length; //We divide the total by the number of grades to get the average.
 
-    const average = total / grades.length; //We divide the total by the number of grades to get the average.
+        //Extra credit: Terniary operator to check if its pass/fail grade.
+        const passFail = average >= 70 ? "Passing" : "Not Passing"; 
 
-    gradeOutput.textContent = `Total: ${total} `;
-    mathOutput.textContent = `Average: ${average.toFixed(2)}`;
+        gradeOutput.textContent = `Total: ${total} `;
+        mathOutput.textContent = `Average: ${average.toFixed(2)} (${passFail})`;
+        //toFixed(2) is used here, as part of the assisgment, to round up the number to 2 decimal places. The Passing/Not passing as aterniary operator is also included for the extra credit, instead of the second if/else statement. 
+
+        //Note, i would like to add that the input allows one to write a singluar e, but that is allowed as in the html it allows any number, even scientific notation, which uses e to express numbers. At first i tought it was a weird glitch, thus hence I am making this note.
+    }
 }
 
 document.getElementById("addGradeButton").addEventListener("click", buttonClick); //when the button is clicked, it will call the function.
