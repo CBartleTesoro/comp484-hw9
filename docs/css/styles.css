@@ -29,30 +29,6 @@
 /* Global styles 
 ------------------------------------*/
 
-.raleway-font1 {
-  font-family: "Raleway", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: italic;
-  font-size: 3em;
-}
-
-
-.inter-font2 {
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.courgette-regular-font3, h2 {  /* i am using this font for titles, etc. Ive added h2 so it affects all h2 headers. */
-  font-family: "Courgette", cursive;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-style: normal;
-  font-size: 2em;
-}
-/* i wanted to use a different cursive text type for the subtiles, but not the same for the Name at the top, which is why i imported a third font for the subtitles */
 
 
 .textlight {
@@ -60,6 +36,7 @@
 }
 
 html {
+    background: #272343;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -72,56 +49,17 @@ html {
 }
 
 body {
-    padding-top: 40px; /*this was added so the navigation bar wouldnt take part of the top of the first part */
+    padding: 40px; /*this was added so the navigation bar wouldnt take part of the top of the first part */
     background: #ffffff; /* .second-color * changed from dark blue to white */
     margin: 0 auto;
+    width: 70%;
     box-sizing: border-box; 
-    font-family: "Inter", Verdana, Geneva, sans-serif;
 }
 
 /* End of global styles */
 
 /* Header & Footer 
 ------------------------------------*/
-
-/* Hw8 1) */
-
-.nav {
-    background:#ffffff; 
-    margin-bottom: 5px;
-    
-}
-
-.nav a { 
-    text-decoration: none;
-    display: inline-block;
-}
-
-.navigationDisp {
-    top: 0; 
-    margin: 0 auto 5px; 
-    padding: 10px 60px;
-    background: #ffffff; 
-    position:fixed; /*so it stays on top of the page when scrolling down */
-    width: 100%; /*so it takes the whole allowed width, as making it fixed made it  no longer follow the previous setting */
-    border-bottom: 2px solid #272343; 
-}
-
-.nav-content {
-    max-width: 950px; 
-    margin: 0 auto 5px; 
-    padding: 10px 60px;
-    display: flex;
-    justify-content: space-around;
-    text-align: center;
-    width: 100%;
-}
-
-.navigationDisp a:link, .navigationDisp a:visited, .navigationDisp a:hover, .navigationDisp a:active { /*added all these in order to keep the navigation the same color regardless of the state of the link. */
-    color: red; /*changes text color to red*/
-    text-decoration: none; /* to get rid of the underline */
-}
-
 
 header {
     background: #bae8e8; /* .fourth-color */
@@ -199,10 +137,7 @@ main section {
     /* sides are still 60px due inherance */
 }
 
-.education h3, .volunteer h3 {
-  margin-block: 0.30em;
-  margin-top: 0.8em;
-}
-.education p, .volunteer p {  /* to reduce space between paragraphs, titles, only in education and volunteer sections */
-  margin-block: 0.30em;
+/* Added so the part 2 new lines dont collapse and shows all 4 lines.*/
+#numberConversionOutput {
+  white-space: pre-line;
 }

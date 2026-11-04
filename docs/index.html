@@ -2,22 +2,38 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+
     <title>JavaScript Mini Demo</title>
   </head>
   <body>
     <h1>JavaScript Mini Demo</h1>
 
+
     <!-- Date Section -->
     <h2>Date Display</h2>
-    <p id="dateOutput">Date will appear here</p>
+    <p id="dateOutput"> The date will display here </p> <!-- i originally changed this inner content thinking it would render the text then the object. After doing it properly, the text doesnt show up, only the script-->
 
     <!-- Number Conversion Section -->
     <h2>Number Conversion Tests</h2>
-    <div id="numberConversionOutput">Results will appear here</div>
+    <p id="numberConversionOutput">Results will appear here</p>
 
     <!-- Math and Formatting Section -->
-    <h2>Math and Number Formatting</h2>
-    <div id="mathOutput">Results will appear here</div>
+    <h2>Math and Number Formatting: Grade Calculator</h2>
+    <label for="gradeInput">Enter a grade:</label>
+    <input id="gradeInput" type="number" min="0" max="100" step="any"> <!-- step means it can be any number, and because of type equal to "number", the user cant input non-numbers -->
+    <button id="addGradeButton" type="button">Add grade</button>
+
+    <ul id="gradeList"></ul>
+    
+    <p id="gradeOutput">No grades entered yet.</p> <!--total grade-->
+    <p id="mathOutput">Results will appear here</p> <!--average grade-->
 
     <!-- Link to external JavaScript -->
     <script src="script.js"></script>
