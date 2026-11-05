@@ -92,7 +92,7 @@
 //This above was my first attempt at displaying the date. It worked, but it was not being displayed in the requested format.
 
 const currentDate = new Date();
-const formattedDate = currentDate.toLocaleDateString("en-US", { //while going throught the npn date documentation, i saw the tolocaldatestring command, which gave a similar format to the one asked, but without the leading zeros and with the standard day/month/year format. By specifiying the "en-US", I was able to change the format to the requested one.
+const formattedDate = currentDate.toLocaleDateString("en-US", { //while going throught the npn date documentation, i saw the tolocaldatestring command(https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString) , which gave a similar format to the one asked, but without the leading zeros and with the standard day/month/year format. By specifiying the "en-US", I was able to change the format to the requested one.
   month: "2-digit",
   day: "2-digit",
   year: "numeric"
@@ -124,8 +124,39 @@ document.getElementById("numberConversionOutput").textContent =
   Original value: "${string}" → Converted: ${stringConverted} → isNaN: ${Number.isNaN(stringConverted)} → isInteger: ${Number.isInteger(stringConverted)} \n
   Original value: "${isNumber}" → Converted: ${isNumberNumber} → isNaN: ${Number.isNaN(isNumberNumber)} → isInteger: ${Number.isInteger(isNumberNumber)}`;
 
-  //--------------------------------------------------------------//
-  // PART 3: Math and Number Formatting --  option B ///
+
+var numberInput = document.getElementById("numberInput");
+var addConversionButton = document.getElementById("addConversionButton");
+var numberConversion2Output = document.getElementById("numberConversion2Output");
+
+//Added this last in order to get the second IF/ELSE requirement done, as I replaced the if/else in the passing/falling grade with a terniary operator.
+function buttonClick2() {
+    var inputValue = numberInput.value;
+    var convertedValue = Number(inputValue);
+    
+    let IsNaNValue;
+    let isIntegerValue;
+
+    if(Number.isNaN(convertedValue)) {
+      isNaNValue = "This value is not a valid number.";
+    }else {
+      isNaNValue = "This value is a valid number.";
+    }
+
+    if(Number.isInteger(convertedValue)) {
+      isIntegerValue = "This value is an integer.";
+    } else {
+      isIntegerValue = "This value is not an integer.";
+    }
+
+    numberConversion2Output.textContent =
+      `Original value: "${inputValue}" → Converted: ${convertedValue} → isNaN: ${isNaNValue} → isInteger: ${isIntegerValue}`;
+}
+
+addConversionButton.addEventListener("click", buttonClick2); //when the button is clicked, it will call the function.
+
+//--------------------------------------------------------------//
+// PART 3: Math and Number Formatting --  option B ///
 /*Option B: Grade score calculator
 Use values like:
 
