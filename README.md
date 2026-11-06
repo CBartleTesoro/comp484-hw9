@@ -8,7 +8,7 @@ This homework 9 consisted of implementing JavaScript built-in objects and browse
 
 [View the project on GitHub Pages](https://cbartletesoro.github.io/comp484-hw9/)
 
-## Built-in Objects and Methods
+## Built-in Objects and Methods used:
 
 - `Date` and `Date.toLocaleDateString()` format the current date. Date was seen in class, however, in a different format as the one requested here(default). My first attemp showed the time, but not in the requiered format, so I went to the official Mpn page to look how to properly formate it. There, I found .toLocalDateString(), whose example looked like what being asked. From there, I employed it and changed parameters to adjust to US MM/DD/YY format and the 2-digit day/month requierement.(toLocalDateString() https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString) 
 
