@@ -10,7 +10,7 @@ This homework 9 consisted of implementing JavaScript built-in objects and browse
 
 ## Built-in Objects and Methods
 
-- `Date` and `Date.toLocaleDateString()` format the current date. Date was seen in class, but the format wasnt addecuate. First attemp wasnt good, so I went to the official Mpn page to look how to get it to the proper format. Found .toLocalDateString() with the desired format, and changed parameters to adjust to US and the asked 2-digit day/month requierement.(toLocalDateString() https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString) 
+- `Date` and `Date.toLocaleDateString()` format the current date. Date was seen in class, however, in a different format as the one requested here(default). My first attemp showed the time, but not in the requiered format, so I went to the official Mpn page to look how to properly formate it. There, I found .toLocalDateString(), whose example looked like what being asked. From there, I employed it and changed parameters to adjust to US MM/DD/YY format and the 2-digit day/month requierement.(toLocalDateString() https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString) 
 
 - `Number()`, `Number.isNaN()`, and `Number.isInteger()` convert and validate values. Number() converts, Is.NaN() checks if it is Not a Number(NaN), and .isInteger() checks if its an integer(number).
 
